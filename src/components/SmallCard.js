@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import {Link} from 'gatsby'
+// import {Link} from 'gatsby'
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import PropTypes from 'prop-types'
 

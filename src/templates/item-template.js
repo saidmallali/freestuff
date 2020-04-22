@@ -62,7 +62,7 @@ function itemTemplate(props) {
                             <div className='content'>
                                 <h1 className='title'>{name}</h1>
                                 <p className='description'>{ description.description}</p>
-                                <a className='btn btn-primary' href={lien} target='_blank'>Claim Now</a>
+                                <a className='btn btn-primary'  rel="noopener noreferrer"  href={lien} target='_blank'>Claim Now</a>
                                 
                             </div>
                         </Col>

@@ -63,7 +63,7 @@ const Footer = () => {
             <div className='social'>
                 {
                     social.map((item,index) => {
-                    return <a  key={index} to={item.url} target='_blank'>{item.icon}</a>
+                    return <a   rel="noopener noreferrer"  key={index} href={item.url} target='_blank'>{item.icon}</a>
                     })
                 }
             </div>

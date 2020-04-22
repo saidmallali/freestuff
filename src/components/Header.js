@@ -6,7 +6,7 @@ import links from "../constants/links"
 import social from "../constants/social"
 import {FaBars} from "react-icons/fa"
 // import HeroImage from "./HeroImage"
-import {graphql,useStaticQuery} from 'gatsby'
+// import {graphql,useStaticQuery} from 'gatsby'
 import background2 from '../images/background2.jpg'
 
 const HeaderStyle = styled.div`
@@ -130,23 +130,23 @@ const HeaderStyle = styled.div`
 
 
 `
-const getBackgroundImage = graphql`
-query backImage {
-  image: file(relativePath:{eq:"PRI_90099206.jpg"}){
-    childImageSharp{
-      fluid(maxWidth:2000, quality:90){
-        ...GatsbyImageSharpFluid_withWebp
-      }
-    }
-  }
-}
+// const getBackgroundImage = graphql`
+// query backImage {
+//   image: file(relativePath:{eq:"PRI_90099206.jpg"}){
+//     childImageSharp{
+//       fluid(maxWidth:2000, quality:90){
+//         ...GatsbyImageSharpFluid_withWebp
+//       }
+//     }
+//   }
+// }
 
-`
+// `
 
 export default function Header() {
 
     const [isOpen, setstate] = useState(false);
-    const backImg = useStaticQuery(getBackgroundImage)
+    // const backImg = useStaticQuery(getBackgroundImage)
     const togolNav = () => {
         setstate(isOpen => !isOpen)
     }
@@ -180,7 +180,7 @@ export default function Header() {
                     <ul className='social'>
                     {
                          social.map((item,index) => {
-                         return <li key={index}><a   to={item.url} target='_blank' style={{color:item.color}}>{item.icon}</a> </li>
+                         return <li key={index}><a  rel="noopener noreferrer"   href={item.url} target='_blank' style={{color:item.color}}>{item.icon}</a> </li>
                          })   
                         }
                     </ul>

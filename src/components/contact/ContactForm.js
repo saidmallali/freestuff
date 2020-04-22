@@ -48,7 +48,7 @@ export default function ContactForm(props) {
             <div className='form-card'>
             <h2 className='form-title'>Get in touch</h2>  
             {/* onSubmit={submitForm}  */}
-             { state.status !== "SUCCESS" && <form  action="https://formspree.io/meqlbeya" method="POST">
+             { state.status !== "SUCCESS" && <form onSubmit={submitForm} action="https://formspree.io/meqlbeya" method="POST">
                     <div className='form-group'>
                         <label htmlFor="name">name</label>
                             <input

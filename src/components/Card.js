@@ -29,7 +29,7 @@ function Card(props) {
                        <AniLink fade  to={type === 'win' ? `/win-stuff/${slug}` : `/free-stuff/${slug}` }>read more</AniLink> </p>
                 </div>
                 <footer className='card-footer'>
-                    <a className='btn btn-primary' href={lien} target='_blank'>Claim Now</a>
+                    <a className='btn btn-primary' href={lien}  rel="noopener noreferrer"  target='_blank'>Claim Now</a>
                 </footer>
             </article>
         </CardStyle>
