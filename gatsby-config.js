@@ -13,7 +13,7 @@ module.exports = {
     title:"free good stuff",
     description:"get free stuff and free simple and win free stuff",
     author:'said labriki',
-    siteUrl:'https://winagiftcard.site/'
+    siteUrl:'https://onlyfreestuff.netlify.app'
   },
   /* Your site config here */
   plugins: [`gatsby-plugin-sass`,
