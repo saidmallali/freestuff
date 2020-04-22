@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import {graphql} from "gatsby"
 
-export default function blog(props) {
+export default function Blog(props) {
 const {data: {site:{siteMetadata}}} =props
     console.log(props)
     return (

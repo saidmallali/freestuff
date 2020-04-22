@@ -3,13 +3,17 @@ import Layout from '../components/Layout'
 import {Col,Row} from 'react-flexbox-grid'
 import Card from '../components/Card'
 import {graphql} from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
- function winStuff(props) {
+ function WinStuff(props) {
     const {data:{winstuffs:{edges}}} = props
 
     return (
         <>
             <Layout>
+                <div  className='navigate'>
+                  <span><AniLink fade to='/'>Home</AniLink> > <span>Free stuff</span></span>
+                </div>
                 <Row>
                         {
                             edges.map((el,index) => {
@@ -26,7 +30,7 @@ import {graphql} from 'gatsby'
     )
 }
 
-export default winStuff;
+export default WinStuff;
 
 export const query = graphql`
 {
@@ -40,7 +44,7 @@ export const query = graphql`
             lien,
             type,
             image{
-              fluid{src}
+              fluid{...GatsbyContentfulFluid_withWebp}
             },
             description{description}
               

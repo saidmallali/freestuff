@@ -26,7 +26,7 @@ function Card(props) {
                         
                         {description.description.length > 250 ? `${description.description.slice(0,250)}...` : description.description}</p>
                     <p className='read-more'>
-                       <AniLink fade  to={type === 'win' ? `/win-stuff/${slug}` : `/free-stuff/${slug}` }>read more</AniLink> </p>
+                       <AniLink replace fade  to={type === 'win' ? `/win-stuff/${slug}` : `/free-stuff/${slug}` }>read more</AniLink> </p>
                 </div>
                 <footer className='card-footer'>
                     <a className='btn btn-primary' href={lien}  rel="noopener noreferrer"  target='_blank'>Claim Now</a>

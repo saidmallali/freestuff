@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import styled from 'styled-components'
 import {FaSistrix} from "react-icons/fa"
+import { Link } from 'gatsby'
 
 
 
 const SearchStyle = styled.div`
 
-    form{
+    .form{
         display:flex;
         align-items:center;
         width:100%;
@@ -24,11 +25,11 @@ const SearchStyle = styled.div`
         }
     }
 
-    button{
+    .button{
         background: #ffb6b6;
     border: none;
-    font-size: 20px;
-    line-height: 18px;
+    font-size: 19px;
+    line-height: 17px;
     padding: 6px 5px;
     color: #fff;
         cursor: pointer;
@@ -50,23 +51,21 @@ export default function Search() {
         setstate({...state, [e.target.name]: e.target.value})
         }
 
-        const handelSubmit = (e) => {
-            e.preventDefault();
-            if( text !== ''){
-                //do somting
-                console.log(state.text)
-                // setstate({...state, text:''})
-            }
-        }
+        // const handelSubmit = (e) => {
+        //     // e.preventDefault();
+        //     if( text !== ''){
+                
+        //     }
+        // }
 
     return (
         <SearchStyle>
-            <form onSubmit={handelSubmit}>
+            <div className='form' >
                 <input onChange={handelChange} type='text' name='text' placeholder='search' value={state.text}/>
-                <button>
+                <Link className='button' to='/search' state={{ searchItem : text}}>
                     <FaSistrix/>
-                </button>
-            </form>
+                </Link>
+            </div>
         </SearchStyle>
     )
 }

@@ -42,7 +42,7 @@ export const query = graphql`
           lien,
           createdAt,
           image{
-            fluid{...GatsbyContentfulFluid_tracedSVG}
+            fluid{...GatsbyContentfulFluid_withWebp}
           },
           description{description}
         

@@ -88,6 +88,9 @@ const HeaderStyle = styled.div`
   .nav-links a {
     padding: 1rem .8rem;
   }
+  .nav-links a.active{
+    color:rgb(0, 139, 249);
+  }
 
 }
 
@@ -163,13 +166,14 @@ export default function Header() {
                             <FaBars className='logo-icon'/>
                         </button>
                     </div>
+                    {/* activeStyle={{color:"rgb(0, 139, 249)"}} */}
                     <ul className={isOpen ? `nav-links show-nav` : `nav-links`}>
                         {
                             links.map((item, index)=> {
                                 return (
                                 <li key={index}><AniLink  
                                   fade
-                                  duration={1}  to={item.path} activeStyle={{color:"rgb(0, 139, 249)"}}  >{item.text}</AniLink></li>
+                                  duration={1}  to={item.path} activeClassName="active"   >{item.text}</AniLink></li>
                                 )
                             })
                         }
