@@ -5,7 +5,7 @@ import Card from '../components/Card'
 import {graphql} from 'gatsby'
 
 
-export default function Home(props) {
+export default function PopularPage(props) {
     const {data:{items:{edges}}} = props
     // console.log('home data',totalCount,edges)
     return (
@@ -32,26 +32,22 @@ export default function Home(props) {
 
 export const query = graphql`
 {
-    items:allContentfulFreeSimples{
-      totalCount,
-      edges{ 
-          node{ 
-            id,
+    items:allContentfulFreeSimples(filter:{popular:{eq:true}}){
+        totalCount,
+      edges{
+        node{
           name,
           slug,
-          lien,
           type,
+          lien,
           image{
             fluid{...GatsbyContentfulFluid_tracedSVG}
           },
           description{description}
-            
+        
         }
       }
     }
   }
 
 `
-
-
-
