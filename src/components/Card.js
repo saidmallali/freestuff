@@ -66,6 +66,7 @@ const CardStyle = styled.div`
             .descirption{
                 font-size:14px;
                 line-height: 21px;
+                color:#61666b;
             }
 
         }
