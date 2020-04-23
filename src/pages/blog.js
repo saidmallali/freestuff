@@ -4,7 +4,7 @@ import {graphql} from "gatsby"
 
 export default function Blog(props) {
 const {data: {site:{siteMetadata}}} =props
-    console.log(props)
+    // console.log(props)
     return (
         <Layout>
            <h1>blog </h1>

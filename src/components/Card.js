@@ -73,6 +73,12 @@ const CardStyle = styled.div`
         .card-footer{
             text-align:center;
             padding:15px 10px 20px 10px;
+
+            a {
+                @media screen and (max-width: 1000px) {
+                font-size:18px;
+                }
+            }
         }
     }
 

@@ -14,7 +14,7 @@ padding:20px 5px;
 
 export default function SideBar() {
     const Items = useStaticQuery(getPopularItems)
-    console.log("popularItems",Items)
+    // console.log("popularItems",Items)
     return (
         <SideBarStyle>
             <Search/>

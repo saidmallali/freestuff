@@ -52,7 +52,7 @@ const Footer = () => {
                 }
         }
     `)
-      console.log(siteData)
+    //   console.log(siteData)
     return (
         <FooterStyle>
             <div className='links'>

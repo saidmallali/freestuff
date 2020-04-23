@@ -5,7 +5,7 @@ import styled from "styled-components"
 import HeroImage from '../components/HeroImage'
 import {Row,Col} from 'react-flexbox-grid'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-
+import Related from '../components/Related'
 
 const ItemTemplateStyle = styled.div`
 
@@ -46,8 +46,9 @@ const ItemTemplateStyle = styled.div`
 
 function ItemTemplate(props) {
 
-    console.log('single item',props.data)
+    // console.log('single item',props.data)
     const{name,lien,description,image,type} = props.data.item
+    const {free,win} = props.data
 
     return (
         <ItemTemplateStyle>
@@ -74,13 +75,14 @@ function ItemTemplate(props) {
                             </div>
                         </Col>
                     </Row>
-
-
-                    
-                    
                 </article>
+                    <Related
+                        data={type === 'free' && free && win ? free.edges : win.edges}
+                        type={type}
+                    />
             </Layout>
         </ItemTemplateStyle>
+
         
     )
 }
@@ -98,10 +100,41 @@ query($slug: String!){
       type,
       image{
         fluid{...GatsbyContentfulFluid_withWebp} 
-
       },
-      description{description}
-      
+      description{description}    
+    }
+  
+  free:allContentfulFreeSimples(filter:{type:{eq:"free"}}){
+    totalCount,
+    edges{ 
+        node{ 
+        name,
+        slug,
+        lien,
+        type,
+        image{
+          fluid{...GatsbyContentfulFluid_withWebp}
+        },
+      }
     }
   }
+  
+   win:allContentfulFreeSimples(filter:{type:{eq:"win"}}){
+    totalCount,
+    edges{ 
+        node{ 
+          id,
+        name,
+        slug,
+        lien,
+        type,
+        image{
+          fluid{...GatsbyContentfulFluid_withWebp}
+        },
+        description{description}
+          
+      }
+    }
+  }
+}
 `

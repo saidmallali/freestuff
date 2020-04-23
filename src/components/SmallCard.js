@@ -24,7 +24,7 @@ import PropTypes from 'prop-types'
 function SmallCard(props) {
     const {name,type,slug,image} = props.item
     // const data = useStaticQuery(getsmallImage)
-    console.log("item",props.item)
+    // console.log("item",props.item)
     return (
         <SmallCardStyle>
             <div className='smallCard'>

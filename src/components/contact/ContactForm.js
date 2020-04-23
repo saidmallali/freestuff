@@ -13,7 +13,7 @@ export default function ContactForm(props) {
     })
     const {email,message,name} = state;
 
-    console.log(props)
+    // console.log(props)
 
     const handelChange = (e) => {
         setstate({...state, [e.target.name]: e.target.value})
