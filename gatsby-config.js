@@ -10,11 +10,15 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata:{
-    title:"free good stuff",
+    title:"only free stuff",
     description:"get free stuff and free simple and win free stuff",
     author:'said labriki',
-    // siteUrl:'https://winagiftcard.site/'
-    siteUrl:'https://onlyfreestuff.netlify.app'
+    titleTemplate: "%s  | only free stuff",
+    siteUrl:'https://winagiftcard.site',
+    // siteUrl:'https://onlyfreestuff.netlify.app',
+    image:'/metaimage.png',
+    twitterUsername:'@styleshopstore1',
+    siteLanguage:'en'
   },
   /* Your site config here */
   plugins: [`gatsby-plugin-sass`,
@@ -23,6 +27,7 @@ module.exports = {
           `gatsby-plugin-sharp`,
           `gatsby-plugin-transition-link`,
           `gatsby-plugin-playground`,
+          `gatsby-plugin-react-helmet`,
           {
             resolve: `gatsby-source-filesystem`,
             options: {

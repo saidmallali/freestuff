@@ -22,24 +22,24 @@ export default function ContactForm(props) {
 
     
 
-    const submitForm = (ev) => {
-        ev.preventDefault();
-        const form = ev.target;
-        const data = new FormData(form);
-        const xhr = new XMLHttpRequest();
-        xhr.open(form.method, form.action);
-        xhr.setRequestHeader("Accept", "application/json");
-        xhr.onreadystatechange = () => {
-          if (xhr.readyState !== XMLHttpRequest.DONE) return;
-          if (xhr.status === 200) {
-            form.reset();
-            setstate({status: "SUCCESS" });
-          } else {
-            setstate({...state, status: "ERROR" });
-          }
-        };
-        xhr.send(data);
-      }
+    // const submitForm = (ev) => {
+    //     ev.preventDefault();
+    //     const form = ev.target;
+    //     const data = new FormData(form);
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.open(form.method, form.action);
+    //     xhr.setRequestHeader("Accept", "application/json");
+    //     xhr.onreadystatechange = () => {
+    //       if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    //       if (xhr.status === 200) {
+    //         form.reset();
+    //         setstate({status: "SUCCESS" });
+    //       } else {
+    //         setstate({...state, status: "ERROR" });
+    //       }
+    //     };
+    //     xhr.send(data);
+    //   }
 
 
 
@@ -48,7 +48,7 @@ export default function ContactForm(props) {
             <div className='form-card'>
             <h2 className='form-title'>Get in touch</h2>  
             {/* onSubmit={submitForm}  */}
-             { state.status !== "SUCCESS" && <form onSubmit={submitForm} action="https://formspree.io/meqlbeya" method="POST">
+             { state.status !== "SUCCESS" && <form action="https://formspree.io/meqlbeya" method="POST">
                     <div className='form-group'>
                         <label htmlFor="name">name</label>
                             <input
