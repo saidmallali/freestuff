@@ -28,6 +28,15 @@ module.exports = {
           `gatsby-plugin-transition-link`,
           `gatsby-plugin-playground`,
           `gatsby-plugin-react-helmet`,
+          `gatsby-plugin-sitemap`,
+          {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+              host: 'https://winagiftcard.site',
+              sitemap: 'https://winagiftcard.site/sitemap.xml',
+              policy: [{ userAgent: '*', allow: '/' }]
+            }
+          },
           {
             resolve: `gatsby-source-filesystem`,
             options: {
