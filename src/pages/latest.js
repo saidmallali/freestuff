@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import {Col,Row} from 'react-flexbox-grid'
 import Card from '../components/Card'
 import {graphql} from 'gatsby'
+import Seo from '../components/Seo'
 
 
 export default function LatestPage(props) {
@@ -11,6 +12,7 @@ export default function LatestPage(props) {
     return (
         <>
             <Layout>
+              <Seo title='latest'/>
                     <Row>
                         {
                             edges.map((el,index) => {

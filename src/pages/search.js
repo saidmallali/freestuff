@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import {Col,Row} from 'react-flexbox-grid'
 import Card from '../components/Card'
 import {graphql} from 'gatsby'
+import Seo from '../components/Seo'
 
 
 export default function Search(props) {
@@ -18,6 +19,7 @@ export default function Search(props) {
 
     return (
         <Layout>
+              <Seo title='Search'/>
                     <Row>
                         {
                             edges.filter(el => el.node.name.toLowerCase().includes(term.toLowerCase())).map((el,index) => {

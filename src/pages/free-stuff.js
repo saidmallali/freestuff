@@ -4,6 +4,7 @@ import {Col,Row} from 'react-flexbox-grid'
 import Card from '../components/Card'
 import {graphql} from 'gatsby'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import Seo from '../components/Seo'
 
 
  function FreeStuff(props) {
@@ -12,6 +13,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
     return (
         <>
             <Layout>
+              <Seo title='Free Stuffs' description='get latest free stuff and free simple'/>
                 <div className='navigate'>
                   <span><AniLink fade to='/'>Home</AniLink> > <span>Win stuff</span></span>
                 </div>

@@ -5,6 +5,7 @@ import Card from '../components/Card'
 import {Row,Col} from 'react-flexbox-grid'
 import {graphql} from 'gatsby'
 import Pagination from '../components/Pagination'
+import Seo from '../components/Seo'
 
 
 const AllItemsStyle = styled.div`
@@ -27,6 +28,7 @@ export default function allItemsTemplate(props) {
     return (
         <AllItemsStyle>
             <Layout>
+                <Seo title='All Free Stuff'/>
             <Row>
                 {
                     data.items.edges.map((el,index) => {

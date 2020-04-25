@@ -4,6 +4,7 @@ import {Col,Row} from 'react-flexbox-grid'
 import Card from '../components/Card'
 import {graphql} from 'gatsby'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import Seo from '../components/Seo'
 
  function WinStuff(props) {
     const {data:{winstuffs:{edges}}} = props
@@ -11,6 +12,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
     return (
         <>
             <Layout>
+              <Seo title='Win Stuff' description='get latest win stuff like gift card '/>
                 <div  className='navigate'>
                   <span><AniLink fade to='/'>Home</AniLink> > <span>Free stuff</span></span>
                 </div>

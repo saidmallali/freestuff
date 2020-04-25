@@ -6,6 +6,8 @@ import HeroImage from '../components/HeroImage'
 import {Row,Col} from 'react-flexbox-grid'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Related from '../components/Related'
+import Seo from '../components/Seo'
+
 
 const ItemTemplateStyle = styled.div`
 
@@ -54,6 +56,7 @@ function ItemTemplate(props) {
         <ItemTemplateStyle>
             
             <Layout>
+                <Seo title={name}/>
             <div className='navigate'>
                   <span><AniLink fade to='/'>Home</AniLink> > <AniLink fade to={type === "win" ? '/win-stuff' : '/free-stuff'}>{type === 'win' ? "Win stuff" : "Free stuff"}</AniLink> > <span>{name}</span>
                     </span>
